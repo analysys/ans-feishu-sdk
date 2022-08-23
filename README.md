@@ -1,9 +1,9 @@
-# [易观方舟](https://www.analysysdata.com/) ans-feishu-sdk [![NPM version][npm-image]][npm-url] [![License](https://img.shields.io/github/license/analysys/ans-feishu-sdk.svg)](https://github.com/analysys/ans-feishu-sdk/blob/master/LICENSE) [![GitHub release](https://img.shields.io/github/release/analysys/ans-feishu-sdk.svg)](https://github.com/analysys/ans-feishu-sdk/releases)
+# [易观方舟](https://www.analysysdata.com/) asd-feishu-sdk [![NPM version][npm-image]][npm-url] [![License](https://img.shields.io/github/license/analysys/ans-feishu-sdk.svg)](https://github.com/analysys/ans-feishu-sdk/blob/master/LICENSE) [![GitHub release](https://img.shields.io/github/release/analysys/ans-feishu-sdk.svg)](https://github.com/analysys/ans-feishu-sdk/releases)
 
 ## 安装
 
 ```sh
-$ npm install ans-feishu-sdk --save 
+$ npm install asd-feishu-sdk --save 
 ```
 
 
@@ -14,10 +14,10 @@ $ npm install ans-feishu-sdk --save
 ##### 引入sdk模块并初始化
 ```js
 
-import AnalysysAgent from "ans-feishu-sdk"
+import AnalysysAgent from "asd-feishu-sdk"
 
 // 引入加密模块(非必须)
-import AnalysysEncryption  from 'ans-feishu-sdk/dist/AnalysysAgent_encryption.min.js';
+import AnalysysEncryption  from 'asd-feishu-sdk/dist/AnalysysAgent_encryption.min.js';
 AnalysysAgent.encrypt = AnalysysEncryption;
 
 //初始化
@@ -43,17 +43,12 @@ autoCompleteURL | 否 | boolean | true | 设置是否采集完整URL，true - �
 autoPageViewDuration | 否 | boolean | false | 是否采集页面离开事件
 
 
-> 通过以上步骤您即可验证SDK是否已经集成成功，更多Api使用方法参考：[易观方舟 飞书 SDK 文档](https://docs.analysys.cn/ark/integration/sdk/wx/wxsdkcustom)
+> 通过以上步骤您即可验证SDK是否已经集成成功，更多Api使用方法参考：[易观方舟 飞书 SDK 文档](https://docs.analysysdata.com/uba-docs/3044463)
 
 
 ## 版本升级记录
 请参见 [Release及版本升级记录](https://github.com/analysys/ans-feishu-sdk/releases)
 
-      
-## 讨论
-+ 微信号：nlfxwz
-+ 钉钉群：30099866
-+ 邮箱：nielifeng@analysys.com.cn
 
 
 **禁止一切基于易观方舟 飞书 开源 SDK 的所有商业活动！**
@@ -66,7 +61,7 @@ autoPageViewDuration | 否 | boolean | false | 是否采集页面离开事件
 
 
 [homepage]: https://github.com/analysys/ans-feishu-sdk
-[npm-url]: https://www.npmjs.com/package/ans-feishu-sdk
-[npm-image]: https://img.shields.io/npm/v/ans-feishu-sdk.svg?style=flat
-[npm-downloads]: https://img.shields.io/npm/dm/ans-feishu-sdk.svg?style=flat
+[npm-url]: https://www.npmjs.com/package/asd-feishu-sdk
+[npm-image]: https://img.shields.io/npm/v/asd-feishu-sdk.svg?style=flat
+[npm-downloads]: https://img.shields.io/npm/dm/asd-feishu-sdk.svg?style=flat
 

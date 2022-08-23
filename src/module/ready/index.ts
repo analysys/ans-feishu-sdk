@@ -28,10 +28,11 @@ function ready (callback) {
 
       if (!isReady) {
         Promise.all([setNetwork(), getServerTime()]).then(function() {
-
           const ARKDEBUG = core.ARKDEBUG
           if (config.appkey !== core.ARKAPPID || (ARKDEBUG === 1 && ARKDEBUG !== config.debugMode) || core.ARKUPLOADURL !== config.uploadURL) {
-            resetCore()
+            if (core.ARKAPPID) {
+              resetCore()
+            }
             setCoreParams({
               ARKAPPID: config.appkey,
               ARKDEBUG: config.debugMode,

@@ -1,29 +1,34 @@
 
 import { successLog } from '../printLog'
-import { attrCheck } from '../../utils/verify'
+import { attrCheck, attrNameCheck } from '../../utils/verify'
 import { setSuperProperty, getSuperProperty as getSuperAttrs, delSuperProperty } from '../../store/core'
  
+
+function setAttrs (superProperty, methodName) {
+  const attrs = attrCheck(superProperty, methodName)
+  if (Object.keys(attrs).length) {
+    setSuperProperty(attrs)
+    successLog({
+      fn: methodName,
+      code: 20002,
+      value: superProperty
+    })
+  }
+}
+
 /**
  * 设置单个通用属性
  * @param name string
  * @param value string  number  boolean Array<string>
  */
 export function registerSuperProperty (name: string, value: string | number | boolean | Array<string>) {
-  const obj = {
-    [name]: value
+  const methodName = '$registerSuperProperty'
+  if (attrNameCheck(name, {code: 600023, fn: methodName, key: name})) {
+    const obj = {
+      [name]: value
+    }
+    setAttrs(obj, methodName)
   }
-
-  if (!attrCheck(obj)) {
-    return false
-  }
-
-  setSuperProperty(obj)
-  
-  successLog({
-    fn: '$registerSuperProperty',
-    code: 20002,
-    value: obj
-  })
 }
 
 /**
@@ -32,18 +37,7 @@ export function registerSuperProperty (name: string, value: string | number | bo
  * @returns 
  */
 export function registerSuperProperties (superProperty: object) {
-
-  if (!attrCheck(superProperty)) {
-    return false
-  }
-
-  setSuperProperty(superProperty)
-
-  successLog({
-    fn: '$registerSuperProperties',
-    code: 20002,
-    value: superProperty
-  })
+  setAttrs(superProperty, '$registerSuperProperties')
 }
 
 /**

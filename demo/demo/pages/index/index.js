@@ -178,7 +178,7 @@ Page({
     // for (var i = 0; i < 10; i++) {
     // console.log(i)
     let i = 0
-    AnalysysAgent.pageView("商品页" + "--" + i, pageInfo, i);
+    AnalysysAgent.pageView("商品页" + "--" + i, pageInfo);
     // }
   },
   // 其他合法逻辑，

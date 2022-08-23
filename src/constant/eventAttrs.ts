@@ -117,3 +117,7 @@ export const events = {
     ]
   }
 }
+
+
+// 只读属性，无法被更改
+export const readOnlyAttrs = ['$lib', '$lib_version', '$platform', '$first_visit_time', '$debug', '$is_login']

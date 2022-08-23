@@ -37,3 +37,12 @@ export interface buriedPointData {
   xwhen: number;
   xcontext: xcontextValue;
 }
+
+// 日志提示类型
+export interface msgetype {
+	key?: string
+	value?: any
+	code: string | number
+	fn?: string
+	keyType?: string
+}

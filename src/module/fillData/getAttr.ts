@@ -8,6 +8,7 @@ import { getPath, getReferer } from '../../utils/path'
 import { pathParams } from '../../store/pathParams'
 import { clientTimeZone } from '../../utils/date'
 import { isString, isNumber } from "../../utils/type"
+import { valToString, valToNumber } from "../../utils/type/transform"
 import { dateFormat } from "../../utils/date"
 import { userClickAttrs } from "../../store/clickElement"
 
@@ -117,7 +118,7 @@ export default {
   },
 
   // 是否校准了时间
-  $is_time_calibrated () {
+  $is_time_calibrated (): boolean {
     return config.allowTimeCheck && timeDiff ? true : false
   },
 
@@ -163,28 +164,28 @@ export default {
   $share_id () {
     return pathParams.share_id
   },
-  $share_level () {
-    return pathParams.share_level
+  $share_level () : number | '' {
+    return valToNumber(pathParams.share_level)
   },
   $share_path () {
     return pathParams.share_path
   },
 
   // 点击元素相关
-  $element_content () {
-    return userClickAttrs.element_content
+  $element_content (): string {
+    return valToString(userClickAttrs.element_content)
   },
-  $element_id () {
-    return userClickAttrs.element_id
+  $element_id () : string {
+    return valToString(userClickAttrs.element_id)
   },
-  $element_type () {
-    return userClickAttrs.element_type
+  $element_type () : string {
+    return valToString(userClickAttrs.element_type)
   },
-  $element_function () {
-    return userClickAttrs.element_function
+  $element_function () : string {
+    return valToString(userClickAttrs.element_function)
   },
-  $element_name () {
-    return userClickAttrs.element_name
+  $element_name () : string {
+    return valToString(userClickAttrs.element_name)
   },
 
   $appid () : string {

@@ -1,5 +1,5 @@
 {
-	"name": "ans-feishu-sdk",
+	"name": "asd-feishu-sdk",
 	"version": "5.0.0",
 	"description": "This is the offical feishu SDK for Analysys.",
 	"main": "dist/AnalysysAgent_FS_SDK.min.js",

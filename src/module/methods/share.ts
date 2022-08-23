@@ -6,6 +6,8 @@ import fillData from '../fillData'
 import ready from '../ready'
 import sendData from '../sendData'
 import { pathParams } from '../../store/pathParams'
+import { attrCheck } from '../../utils/verify/index'
+import { getSuperProperty } from '../../store/core'
 
 function share (toShareProperties, properties) {
 
@@ -30,8 +32,11 @@ function share (toShareProperties, properties) {
       '$share_path': pageUrl
     }
 
-    res.xcontext = Object.assign({}, res.xcontext, shareObj)
-
+    let attrs = {}
+    if (properties) {
+      attrs = attrCheck(properties, '$share')
+    }
+    res.xcontext = Object.assign({}, res.xcontext, shareObj, getSuperProperty(), attrs)
     sendData(res)
 
   }

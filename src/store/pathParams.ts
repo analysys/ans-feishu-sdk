@@ -4,6 +4,7 @@
 
  interface paramsValue {
   scene?: number;
+
   campaign_id?: string;
   utm_campaign_id?: string;
   utm_source?: string;
@@ -36,7 +37,6 @@ export function getPathParams (): object {
 }
 
 export function setPathParams (option: {query: paramsValue, scene: number}) : any {
-  
   const query = option.query
   
   if (query) {

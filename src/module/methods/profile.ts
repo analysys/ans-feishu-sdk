@@ -20,10 +20,8 @@ function sendProfile (eventName, propertyName, propertyValue) {
     property[propertyName] = propertyValue
   }
 
-  if (attrCheck(property)) {
-    res.xcontext = Object.assign({}, res.xcontext, property)
-  }
-
+  res.xcontext = Object.assign({}, res.xcontext, attrCheck(property, eventName))
+  
   sendData(res)
 }
 

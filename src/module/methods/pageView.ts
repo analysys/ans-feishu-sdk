@@ -8,20 +8,19 @@ import { getPageProperty } from '../../store/pageProperty'
 import { eventAttribute } from '../../store/eventAttribute'
 
 function pageView (pageName: string, properties: object) {
+
+  let userObj = {}, customProperties = {}, eventName = '$pageview'
   
-  let userObj = {}
-  const argLen = arguments.length
-  if (argLen) {
-    if (lengthCheck(pageName)) {
-      userObj['$title'] = pageName
-    }
-    if (attrCheck(properties)) {
-      userObj = Object.assign({}, properties, userObj)
-    }
+  if (lengthCheck(pageName)) {
+    userObj['$title'] = pageName
+    customProperties = attrCheck(properties, eventName)
   }
 
+  userObj = Object.assign({}, customProperties, userObj)
+  
+
   // 获取上报数据模块
-  const res = fillData('$pageview')
+  const res = fillData(eventName)
 
   // 记录浏览页面时间
   eventAttribute.pageview.xwhen = res.xwhen

@@ -7,7 +7,7 @@ import { setConfig } from './store/config'
 import { globalWindow, optionsDefault } from './constant/index'
 import { coreInit } from './store/core'
 import ready from './module/ready'
-
+import { successLog } from './module/printLog/index'
 import {
   pageView,
   profileSetOnce, profileSet, profileAppend, profileIncrement, profileDelete, profileUnset,
@@ -57,6 +57,9 @@ class ArkWxSdk {
   init (config: initConfig) {
     setConfig(config).then(o => {
       this.config = o
+      successLog({
+        code: 20007
+      })
     })
   }
 }
